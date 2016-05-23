@@ -9,6 +9,6 @@ public class SorterWithStrategy {
     }
 
     public void sort(int[] array) {
-        sorterStrategy.sort();
+        sorterStrategy.sort(array);
     }
 }
