@@ -4,6 +4,17 @@ import java.util.List;
 public class Statistics {
 
     private List<GameResult> results = new ArrayList<GameResult>();
+    private static Statistics instance = null;
+
+    private Statistics(){}
+
+    public Statistics getInstance(){
+        if(instance == null){
+            instance = new Statistics();
+        }
+        return instance;
+    }
+
 
     public void addResult(GameResult result) {
         results.add(result);

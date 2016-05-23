@@ -50,5 +50,29 @@ public abstract class Player {
         return firstname + " " + lastname;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+
+        if (obj == null)
+            return false;
+
+        if (obj.getClass() != this.getClass())
+            return false;
+
+        Player player = (Player) obj;
+
+        if (player.lastname == null || player.firstname == null || player.middlename == null)
+            return false;
+
+        if (this.lastname.equals(player.lastname) &&
+                this.firstname.equals(player.firstname) &&
+                this.middlename.equals(player.middlename) &&
+                this.age == player.age &&
+                this.type == player.type)
+            return true;
+
+        return false;
+    }
+
     public abstract String makeMove();
 }
